@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+
+# Playwright
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+playwright/.auth/
+
+# Generated Reports
+reports/
+allure-results/
+
+# Logs
+logs/
+*.log
+
+# Screenshots
+screenshots/
+
+# Downloads
+downloads/
+allure-report/
+allure-results/
