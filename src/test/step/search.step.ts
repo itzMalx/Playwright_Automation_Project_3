@@ -15,3 +15,7 @@ Given('enters {string} in search field', async function (this: lmsworld,keyword 
 Then('appropriate course should be shown', async function (this: lmsworld) {
     await this.coursePage.isCourseExists(Keyword)
 });
+
+Then('No match message should be shown', async function (this: lmsworld) {
+    await this.coursePage.noMatchVisible()
+});

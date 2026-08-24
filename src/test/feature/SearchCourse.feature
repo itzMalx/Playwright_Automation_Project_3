@@ -12,7 +12,7 @@ Feature: Vetri_24-08-2026_Search_Courses_Functionality
         Then learner should receive the "success"
 
   @Test
-  Scenario Outline: Search the courses in the WaveInit LMS
+  Scenario Outline: Search the courses with keyword in the WaveInit LMS
     And clicks Explore courses button
     And enters "<keyword>" in search field
     Then appropriate course should be shown
@@ -21,3 +21,17 @@ Feature: Vetri_24-08-2026_Search_Courses_Functionality
       | keyword |
       | Manual Testing |
       | vcjasn |
+
+  @Test
+  Scenario Outline: Search the courses with invalid in the WaveInit LMS
+    And clicks Explore courses button
+    And enters "<keyword>" in search field
+    Then No match message should be shown
+
+    Examples:
+      | keyword |
+      | wrong |
+      | invalid |
+      | error |
+
+    
