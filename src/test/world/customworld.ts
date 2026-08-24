@@ -1,3 +1,4 @@
+import { trainerLoginPage } from './../page/trainerLoginPage';
 import { setWorldConstructor,World } from "@cucumber/cucumber";
 import { Browser,BrowserContext,Page } from "@playwright/test";
 import { adminLoginPage } from "../page/adminLoginPage";
@@ -7,7 +8,7 @@ export class lmsworld extends World{
     context!:BrowserContext
     page!:Page
     adminLoginPage!:adminLoginPage
-    
+    trainerLoginPage!:trainerLoginPage
 }
 
 setWorldConstructor(lmsworld)
