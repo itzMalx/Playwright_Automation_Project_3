@@ -1,4 +1,4 @@
-@Updating
+@Muhindhar
 Feature: Muhindhar_25-08-2026_Forgot Password
 
 Feature Description: As a user, I want to reset my password using
