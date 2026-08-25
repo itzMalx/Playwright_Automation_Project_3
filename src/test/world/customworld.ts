@@ -1,12 +1,14 @@
 import { setWorldConstructor,World } from "@cucumber/cucumber";
 import { Browser,BrowserContext,Page } from "@playwright/test";
 import { adminLoginPage } from "../page/adminLoginPage";
+import { learnerLoginPage } from "../page/learnerLoginPage";
 
 export class lmsworld extends World{
     browser!:Browser
     context!:BrowserContext
     page!:Page
     adminLoginPage!:adminLoginPage
+    learnerLoginPage!: learnerLoginPage;
     
 }
 
