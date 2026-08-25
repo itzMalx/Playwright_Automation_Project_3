@@ -7,6 +7,7 @@ import { learnerLoginPage } from "../page/learnerLoginPage";
 import { trainerLoginPage } from './../page/trainerLoginPage';
 import { DashboardPage } from "../page/dashboardPage";
 import { CoursePage } from "../page/coursePage";
+import { SignupPage } from "../page/signupPage";
 
 setDefaultTimeout(90 * 1000);
 
@@ -26,6 +27,7 @@ Before(async function (this: lmsworld) {
     this.trainerLoginPage = new trainerLoginPage(this.page)
     this.dashboardPage=new DashboardPage(this.page)
     this.coursePage=new CoursePage(this.page)
+    this.signupPage=new SignupPage(this.page)
 });
 
 After(async function (this: lmsworld, scenario) {
