@@ -4,6 +4,7 @@ import { lmsworld } from "../world/customworld";
 import { logger } from "../../utilities/logger";
 import { adminLoginPage } from "../page/adminLoginPage";
 import { learnerLoginPage } from "../page/learnerLoginPage";
+import { trainerLoginPage } from './../page/trainerLoginPage';
 
 setDefaultTimeout(90 * 1000);
 
@@ -20,6 +21,7 @@ Before(async function (this: lmsworld) {
     this.page = await this.context.newPage();
     this.adminLoginPage = new adminLoginPage(this.page)
     this.learnerLoginPage = new learnerLoginPage(this.page);
+    this.trainerLoginPage = new trainerLoginPage(this.page)
 });
 
 After(async function (this: lmsworld, scenario) {
