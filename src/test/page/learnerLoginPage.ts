@@ -1,4 +1,5 @@
 import { BasePage } from "./basepage";
+import { expect } from "@playwright/test";
 
 export class learnerLoginPage extends BasePage {
 
@@ -20,6 +21,16 @@ export class learnerLoginPage extends BasePage {
     private readonly wrongemailorpass =
         this.page.getByText("Invalid email or password");
 
+    private readonly signup=this.page.locator("//a[@class='auth-footer-link']")
+
+
+    async isSigninVisible(){
+        await expect(this.signinbtn).toBeVisible()
+    }
+
+    async clickSignup(){
+        await this.signup.click()
+    }
 
     async clicklearner() {
         await this.click(this.learnertab);
