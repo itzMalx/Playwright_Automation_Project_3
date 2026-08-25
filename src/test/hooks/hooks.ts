@@ -7,9 +7,9 @@ import { learnerLoginPage } from "../page/learnerLoginPage";
 import { trainerLoginPage } from "../page/trainerLoginPage";
 import { DashboardPage } from "../page/dashboardPage";
 import { CoursePage } from "../page/coursePage";
+import { SignupPage } from "../page/signupPage";
 import { ForgotPasswordPage } from "../page/forgotPasswordPage";
 import { MailosaurService } from "../../services/mailosaurService";
-
 
 setDefaultTimeout(90 * 1000);
 
@@ -31,7 +31,12 @@ Before(async function (this: lmsworld) {
     this.browser = browser;
     this.context = await this.browser.newContext();
     this.page = await this.context.newPage();
-
+    this.adminLoginPage = new adminLoginPage(this.page)
+    this.learnerLoginPage = new learnerLoginPage(this.page);
+    this.trainerLoginPage = new trainerLoginPage(this.page)
+    this.dashboardPage=new DashboardPage(this.page)
+    this.coursePage=new CoursePage(this.page)
+    this.signupPage=new SignupPage(this.page)
     this.adminLoginPage = new adminLoginPage(this.page);
     this.learnerLoginPage = new learnerLoginPage(this.page);
     this.trainerLoginPage = new trainerLoginPage(this.page);
