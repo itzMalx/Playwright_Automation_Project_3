@@ -16,5 +16,5 @@ Then("the course {string} should be displayed", async function (this: lmsworld, 
 });
 
 Then('no courses should be displayed', async function () {
-  
+  await this.learnerMyCoursePage.noCourseResult();
 });
