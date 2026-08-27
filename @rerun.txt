@@ -1,2 +1,0 @@
-src\test\feature\searchCourse.feature:23:64:65:66
-src\test\feature\signup.feature:94:95
