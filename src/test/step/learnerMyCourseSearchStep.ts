@@ -14,3 +14,7 @@ Then("the course {string} should be displayed", async function (this: lmsworld, 
     const result = await this.learnerMyCoursePage.verifySearchResult(expectedCourse);
     expect(result).toBe(true);
 });
+
+Then('no courses should be displayed', async function () {
+  await this.learnerMyCoursePage.noCourseResult();
+});
