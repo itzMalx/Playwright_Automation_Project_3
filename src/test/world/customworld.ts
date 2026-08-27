@@ -33,6 +33,7 @@ export class lmsworld extends World {
     addTrainingPage!:AddTrainingPage
 
     otp!: string;
+    resetEmail!: string;
     emailStartTime!: Date;
     learnerExploreTrainingPage!: LearnerExploreTrainingPage;
 }
