@@ -1,7 +1,7 @@
 @Vetri
 Feature: Vetri_24-08-2026_Search_Courses_Functionality
 
-  Feature Description: As a trainer user, I want to search the existing courses
+  Feature Description: As a learner, I want to search the existing courses
 
   Background:
     Given user is on the login page of the WaveInit LMS site
@@ -20,7 +20,7 @@ Feature: Vetri_24-08-2026_Search_Courses_Functionality
     Examples:
       | keyword |
       | Manual Testing |
-      | vcjasn |
+      | Manual |
 
   @Test
   Scenario Outline: Search the courses with invalid in the WaveInit LMS
