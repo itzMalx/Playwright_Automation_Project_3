@@ -10,6 +10,7 @@ import { ForgotPasswordPage } from "../page/forgotPasswordPage";
 import { MailosaurService } from "../../services/mailosaurService";
 import { LearnerMyCoursePage } from "../page/learnerMyCoursePage";
 import {SignupPage} from '../page/signupPage'
+import { LearnerExploreTrainingPage } from "../page/learnerExploreTrainingPage";
 
 export class lmsworld extends World {
 
@@ -31,6 +32,7 @@ export class lmsworld extends World {
 
     otp!: string;
     emailStartTime!: Date;
+    learnerExploreTrainingPage!: LearnerExploreTrainingPage;
 }
 
 setWorldConstructor(lmsworld);
