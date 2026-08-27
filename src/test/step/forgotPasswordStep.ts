@@ -18,6 +18,8 @@ When(
     "user enters the registered email {string}",
     async function (this: lmsworld, email: string) {
 
+        this.resetEmail = email;
+
         await this.forgotPasswordPage.entermail(email);
     }
 );
@@ -27,7 +29,7 @@ When(
     "user clicks on the send verification code button",
     async function (this: lmsworld) {
 
-        this.emailStartTime = new Date();
+        this.emailStartTime = new Date(Date.now() - 10000);
 
         await this.forgotPasswordPage.sendverifycode();
     }
@@ -39,7 +41,7 @@ When(
     async function (this: lmsworld) {
 
         this.otp = await this.mailosaurService.getOTP(
-            process.env.MAILOSAUR_EMAIL!,
+            this.resetEmail,
             this.emailStartTime
         );
 

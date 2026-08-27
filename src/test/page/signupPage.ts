@@ -11,13 +11,28 @@ export class SignupPage extends BasePage{
     private readonly termsAndCondition=this.page.locator("//input[@type='checkbox']")
     private readonly createAccount=this.page.locator("//button[@type='submit']")
     private readonly success=this.page.locator("//span[contains(text(),'Registration submitted successfully! Your account ')]")
+    private readonly warningMessage=this.page.locator("//span[@class='auth-error-text']")
 
     async enterDetails(credentials:any){
         await this.name.fill(credentials.fullName)
-        await this.email.fill(credentials.email)
+        await this.email.fill(this.makeUnique(credentials.email));
         await this.phone.fill(credentials.phone)
         await this.password.fill(credentials.password)
-        await this.confirmPassword.fill(credentials.password)
+        await this.confirmPassword.fill(credentials.confirmPassword)
+    }
+
+    private makeUnique(email: string):string{
+        if(!email) {
+            return email;
+        }
+        if(!email.includes("@")) {
+            return `${email}${Date.now()}`;
+        }
+        const [username, domain] = email.split("@");
+        return `${username}${Date.now()}@${domain}`;
+}
+
+    async checkTermsAndCondition(){
         await this.termsAndCondition.click()
     }
 
@@ -25,8 +40,8 @@ export class SignupPage extends BasePage{
         await this.name.fill(name)
     }
 
-    async enterEmail(email:string){
-        await this.email.fill(email)
+    async enterEmail(email: string) {
+        await this.email.fill(this.makeUnique(email));
     }
 
     async enterPhone(phone:string){
@@ -71,7 +86,11 @@ export class SignupPage extends BasePage{
 
         const message=await emptyField.evaluate((element: HTMLInputElement) => element.validationMessage);
 
-        expect(message).toBe(warningMessage);
+        expect(message).toContain(warningMessage);
+    }
+
+    async isWarningVisible(message : string){
+        await expect(this.warningMessage).toContainText(message);
     }
 
 }

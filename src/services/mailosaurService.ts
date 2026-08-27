@@ -24,11 +24,12 @@ export class MailosaurService {
         );
 
         const body = message.text?.body || "";
+        const subject = message.subject || "";
 
         console.log("WaveInit email received");
         console.log("Subject:", message.subject);
 
-        const otp = body.match(/\b\d{6}\b/)?.[0];
+        const otp = body.match(/\b\d{6}\b/)?.[0] || subject.match(/\b\d{6}\b/)?.[0];
 
         if (!otp) {
             throw new Error("6-digit OTP not found in WaveInit email");

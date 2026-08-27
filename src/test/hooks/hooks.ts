@@ -11,6 +11,9 @@ import { SignupPage } from "../page/signupPage";
 import { ForgotPasswordPage } from "../page/forgotPasswordPage";
 import { MailosaurService } from "../../services/mailosaurService";
 import { LearnerMyCoursePage } from "../page/learnerMyCoursePage";
+import { AddTrainingPage } from "../page/addTrainingPage";
+import { editTrainerProfilePage } from "../page/editTrainerProfilePage";
+import { LearnerExploreTrainingPage } from "../page/learnerExploreTrainingPage";
 
 setDefaultTimeout(90 * 1000);
 
@@ -39,16 +42,21 @@ Before(async function (this: lmsworld) {
     this.coursePage=new CoursePage(this.page)
     this.signupPage=new SignupPage(this.page)
     this.adminLoginPage = new adminLoginPage(this.page);
-    this.learnerLoginPage = new learnerLoginPage(this.page);
     this.trainerLoginPage = new trainerLoginPage(this.page);
     this.dashboardPage = new DashboardPage(this.page);
     this.coursePage = new CoursePage(this.page);
+    this.addTrainingPage = new AddTrainingPage(this.page)
+   
 
     this.forgotPasswordPage = new ForgotPasswordPage(this.page);
     this.mailosaurService = new MailosaurService();
     this.learnerMyCoursePage = new LearnerMyCoursePage(this.page);
+     this.editTrainerProfilePage =new editTrainerProfilePage(this.page);
+
+    this.learnerExploreTrainingPage =new LearnerExploreTrainingPage(this.page);
     console.log("ForgotPasswordPage initialized");
     console.log("MailosaurService initialized");
+
 });
 After(async function (this: lmsworld, scenario) {
 
