@@ -52,3 +52,27 @@ Then('user should receive the {string}',async function (this: lmsworld, result: 
         await this.adminLoginPage.verifyInvalidCredentials();
     }
 );
+
+Given(
+    "admin user is logged in",
+    async function (this: lmsworld) {
+
+        await this.adminLoginPage.goto();
+
+        await this.adminLoginPage.clickadmin();
+
+        await this.adminLoginPage.enterEmail(
+            process.env.ADMIN_EMAIL!
+        );
+
+        await this.adminLoginPage.enterPassword(
+            process.env.ADMIN_PASSWORD!
+        );
+
+        await this.adminLoginPage.clickSignin();
+
+        await this.adminLoginPage.verifyLoginSuccess();
+
+        console.log("Admin user logged in successfully");
+    }
+);

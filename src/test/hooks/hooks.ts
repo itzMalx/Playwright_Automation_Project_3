@@ -11,6 +11,7 @@ import { SignupPage } from "../page/signupPage";
 import { ForgotPasswordPage } from "../page/forgotPasswordPage";
 import { MailosaurService } from "../../services/mailosaurService";
 import { LearnerMyCoursePage } from "../page/learnerMyCoursePage";
+import { AddTrainingPage } from "../page/addTrainingPage";
 
 setDefaultTimeout(90 * 1000);
 
@@ -43,7 +44,7 @@ Before(async function (this: lmsworld) {
     this.trainerLoginPage = new trainerLoginPage(this.page);
     this.dashboardPage = new DashboardPage(this.page);
     this.coursePage = new CoursePage(this.page);
-
+    this.addTrainingPage = new AddTrainingPage(this.page)
     this.forgotPasswordPage = new ForgotPasswordPage(this.page);
     this.mailosaurService = new MailosaurService();
     this.learnerMyCoursePage = new LearnerMyCoursePage(this.page);

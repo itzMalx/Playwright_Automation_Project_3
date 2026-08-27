@@ -10,6 +10,7 @@ import { ForgotPasswordPage } from "../page/forgotPasswordPage";
 import { MailosaurService } from "../../services/mailosaurService";
 import { LearnerMyCoursePage } from "../page/learnerMyCoursePage";
 import {SignupPage} from '../page/signupPage'
+import { AddTrainingPage } from "../page/addTrainingPage";
 
 export class lmsworld extends World {
 
@@ -28,6 +29,7 @@ export class lmsworld extends World {
     forgotPasswordPage!: ForgotPasswordPage;
 
     mailosaurService!: MailosaurService;
+    addTrainingPage!:AddTrainingPage
 
     otp!: string;
     emailStartTime!: Date;
