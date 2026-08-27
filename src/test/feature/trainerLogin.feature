@@ -16,7 +16,7 @@ Feature Description: As a trainer user, I want to login to the WaveInit LMS
 
     Examples:
         | email                | password   | result  |
-        | gopal@waveinit.com   | gopal123   | success |
+        | riya@gmail.com       | riya1234   | success |
         | trainer@test.com     | wrong123   | fail    |
         | invalid@test.com     | trainer123 | fail    |
         |                      | trainer123 | fail    |
