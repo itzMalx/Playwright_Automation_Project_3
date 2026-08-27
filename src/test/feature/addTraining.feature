@@ -1,5 +1,5 @@
 @Muhindhar
-Feature: Muhindhar_26-08-2026_Add training module
+Feature: Muhindhar_27-08-2026_Add training module
 
 Feature Description: As a admin i want to create the training session
 
