@@ -1,4 +1,5 @@
 @Vetri
+@Search
 Feature: Vetri_24-08-2026_Search_Courses_Functionality
 
   Feature Description: As a learner, I want to search the existing courses
@@ -12,8 +13,8 @@ Feature: Vetri_24-08-2026_Search_Courses_Functionality
         Then learner should receive the "success"
 
   @Test
-  Scenario Outline: Search the courses with keyword in the WaveInit LMS
-    And clicks Explore courses button
+  Scenario Outline: User search the courses with valid keyword in the WaveInit LMS 
+    When the user clicks the Explore Courses button
     And enters "<keyword>" in search field
     Then appropriate course should be shown
 
@@ -23,8 +24,8 @@ Feature: Vetri_24-08-2026_Search_Courses_Functionality
       | Manual |
 
   @Test
-  Scenario Outline: Search the courses with invalid in the WaveInit LMS
-    And clicks Explore courses button
+  Scenario Outline: User search the courses with invalid keyword in the WaveInit LMS
+    When the user clicks the Explore Courses button
     And enters "<keyword>" in search field
     Then No match message should be shown
 
@@ -33,5 +34,35 @@ Feature: Vetri_24-08-2026_Search_Courses_Functionality
       | wrong |
       | invalid |
       | error |
+
+    @Debug
+    Scenario Outline: User search the course irrespective of cases 
+      When the user clicks the Explore Courses button
+      And enters "<keyword>" in search field
+      Then appropriate course should be shown
+
+      Examples:
+          | keyword |
+          | MANUAL TESTING |
+          | manual testing |
+          | MaNuAl TeStIng |
+
+    @Space
+    Scenario: User searches for a course using only spaces
+      When the user clicks the Explore Courses button
+      And the user enters only spaces in the search field
+      Then No match message should be shown
+    
+    @LeadingAndTrailingSpace
+    Scenario Outline: User searches for a course using a keyword with leading or trailing spaces
+      When the user clicks the Explore Courses button
+      And enters "  Manual testing  " in search field
+      Then appropriate course should be shown
+
+      Examples:
+          | keyword |
+          |   Manual testing   |
+          |Manual testing    |
+          |    Manual testing|
 
     
