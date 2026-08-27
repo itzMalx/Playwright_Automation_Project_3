@@ -9,6 +9,7 @@ import { CoursePage } from "../page/coursePage";
 import { ForgotPasswordPage } from "../page/forgotPasswordPage";
 import { MailosaurService } from "../../services/mailosaurService";
 import { LearnerMyCoursePage } from "../page/learnerMyCoursePage";
+import {SignupPage} from '../page/signupPage'
 
 export class lmsworld extends World {
 
@@ -23,6 +24,7 @@ export class lmsworld extends World {
     dashboardPage!: DashboardPage;
     coursePage!: CoursePage;
     learnerMyCoursePage!: LearnerMyCoursePage;
+    signupPage!:SignupPage;
     forgotPasswordPage!: ForgotPasswordPage;
 
     mailosaurService!: MailosaurService;
