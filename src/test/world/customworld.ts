@@ -14,6 +14,7 @@ import { AddTrainingPage } from "../page/addTrainingPage";
 import { editTrainerProfilePage } from './../page/editTrainerProfilePage';
 import { LearnerExploreTrainingPage } from "../page/learnerExploreTrainingPage";
 import { AddParticipantPage } from "../page/addParticipantPage";
+import { AdminAddTrainerPage } from "../page/adminAddTrainerPage";
 
 export class lmsworld extends World {
 
@@ -40,6 +41,7 @@ export class lmsworld extends World {
     participantName!: string;
     participantEmail!: string;
     learnerExploreTrainingPage!: LearnerExploreTrainingPage;
+    adminAddTrainerPage!: AdminAddTrainerPage;
 }
 
 setWorldConstructor(lmsworld);
