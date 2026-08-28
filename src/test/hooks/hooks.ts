@@ -11,9 +11,12 @@ import { SignupPage } from "../page/signupPage";
 import { ForgotPasswordPage } from "../page/forgotPasswordPage";
 import { MailosaurService } from "../../services/mailosaurService";
 import { LearnerMyCoursePage } from "../page/learnerMyCoursePage";
+import { AddTrainingPage } from "../page/addTrainingPage";
 import { editTrainerProfilePage } from "../page/editTrainerProfilePage";
 import { LearnerExploreTrainingPage } from "../page/learnerExploreTrainingPage";
+import { AdminAddTrainerPage } from "../page/adminAddTrainerPage";
 import { editSocialLinkTrainerPage } from "../page/editSocialLinkTrainerPage";
+
 setDefaultTimeout(90 * 1000);
 
 let browser: Browser;
@@ -42,14 +45,24 @@ Before(async function (this: lmsworld) {
     this.signupPage=new SignupPage(this.page)
     this.adminLoginPage = new adminLoginPage(this.page);
     this.trainerLoginPage = new trainerLoginPage(this.page);
+    this.dashboardPage = new DashboardPage(this.page);
+    this.coursePage = new CoursePage(this.page);
+    this.addTrainingPage = new AddTrainingPage(this.page)
    
 
     this.forgotPasswordPage = new ForgotPasswordPage(this.page);
     this.mailosaurService = new MailosaurService();
     this.learnerMyCoursePage = new LearnerMyCoursePage(this.page);
+
     this.editTrainerProfilePage =new editTrainerProfilePage(this.page);
     this.learnerExploreTrainingPage =new LearnerExploreTrainingPage(this.page);
+   
+    this.editTrainerProfilePage =new editTrainerProfilePage(this.page);
+    
+    this.learnerExploreTrainingPage =new LearnerExploreTrainingPage(this.page);
+    this.adminAddTrainerPage = new AdminAddTrainerPage(this.page);
     this.editSocialLinkTrainerPage=new editSocialLinkTrainerPage(this.page);
+
     console.log("ForgotPasswordPage initialized");
     console.log("MailosaurService initialized");
 
