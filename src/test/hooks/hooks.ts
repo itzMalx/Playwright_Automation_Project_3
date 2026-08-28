@@ -14,6 +14,7 @@ import { LearnerMyCoursePage } from "../page/learnerMyCoursePage";
 import { AddTrainingPage } from "../page/addTrainingPage";
 import { editTrainerProfilePage } from "../page/editTrainerProfilePage";
 import { LearnerExploreTrainingPage } from "../page/learnerExploreTrainingPage";
+import { AddParticipantPage } from "../page/addParticipantPage";
 
 setDefaultTimeout(90 * 1000);
 
@@ -21,11 +22,7 @@ let browser: Browser;
 
 
 BeforeAll(async () => {
-
-    browser = await chromium.launch({
-        headless: true
-    });
-
+    browser = await chromium.launch({headless: false});
     logger.info("Browser launched");
 });
 
@@ -46,8 +43,7 @@ Before(async function (this: lmsworld) {
     this.dashboardPage = new DashboardPage(this.page);
     this.coursePage = new CoursePage(this.page);
     this.addTrainingPage = new AddTrainingPage(this.page)
-   
-
+    this.addParticipantPage = new AddParticipantPage(this.page)
     this.forgotPasswordPage = new ForgotPasswordPage(this.page);
     this.mailosaurService = new MailosaurService();
     this.learnerMyCoursePage = new LearnerMyCoursePage(this.page);
