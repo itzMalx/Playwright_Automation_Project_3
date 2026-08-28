@@ -11,7 +11,8 @@ import { MailosaurService } from "../../services/mailosaurService";
 import { LearnerMyCoursePage } from "../page/learnerMyCoursePage";
 import {SignupPage} from '../page/signupPage'
 import { editTrainerProfilePage } from './../page/editTrainerProfilePage';
-
+import { LearnerExploreTrainingPage } from "../page/learnerExploreTrainingPage";
+import { editSocialLinkTrainerPage } from "../page/editSocialLinkTrainerPage";
 export class lmsworld extends World {
 
     browser!: Browser;
@@ -32,6 +33,8 @@ export class lmsworld extends World {
 
     otp!: string;
     emailStartTime!: Date;
+    learnerExploreTrainingPage!: LearnerExploreTrainingPage;
+    editSocialLinkTrainerPage!: editSocialLinkTrainerPage;
 }
 
 setWorldConstructor(lmsworld);
