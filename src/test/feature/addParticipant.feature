@@ -1,4 +1,4 @@
-@Updating
+@Muhindhar
 Feature: Muhindhar_28-08-2026_Add participant by admin feature
 
 Feature Description : As a admin, I want to add the participant with valid and invalid details
