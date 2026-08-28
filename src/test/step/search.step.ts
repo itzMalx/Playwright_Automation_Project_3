@@ -3,7 +3,7 @@ import { lmsworld } from "../world/customworld";
 
 let Keyword : string
 
-Given('clicks Explore courses button', async function (this: lmsworld) {
+When('the user clicks the Explore Courses button', async function (this: lmsworld) {
     await this.dashboardPage.clickExploreCourse();
 });
 
@@ -18,4 +18,9 @@ Then('appropriate course should be shown', async function (this: lmsworld) {
 
 Then('No match message should be shown', async function (this: lmsworld) {
     await this.coursePage.noMatchVisible()
+});
+
+
+When('the user enters only spaces in the search field', async function (this: lmsworld) {
+    await this.coursePage.enterKeyword("    ")
 });
