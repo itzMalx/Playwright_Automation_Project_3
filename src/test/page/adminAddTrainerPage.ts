@@ -18,6 +18,7 @@ export class AdminAddTrainerPage extends BasePage {
     private readonly phoneNumValid = this.page.getByText("Enter a valid phone number");
     private readonly passwordRequired = this.page.getByText("Password is required");
     private readonly confirmPasswordRequired = this.page.getByText("Please confirm the password");
+    private readonly trainerCreatedMsg = this.page.getByText("Trainer created successfully");
 
     async clickTrainerBtn() {
         await this.click(this.trainerBtn);
@@ -50,6 +51,10 @@ export class AdminAddTrainerPage extends BasePage {
         await this.click(this.createTrainerBtn)
     }
 
+    async trainerCreated() {
+        logger.info(`Name validation: ${await this.trainerCreatedMsg}`);
+        await expect(await this.trainerCreatedMsg).toBeVisible()
+    }
     async nameRequiredMsg(errorMsg: string) {
         const message = await this.nameRequired.textContent();
         logger.info(`Name validation: ${message}`);
@@ -97,4 +102,4 @@ export class AdminAddTrainerPage extends BasePage {
                 throw new Error(`Invalid validation type: ${type}`);
         }
     }
-}
+}  

@@ -8,6 +8,17 @@ Feature: Myl 27_08_2026 Add Trainer
     And user enters the password "admin123"
     And user clicks on the signin button
 
+  @valid
+  Scenario: Successfully add trainer with mandatory fields
+  And clicks on the Trainer side pannel button
+    And clicks on the Add trainer button
+    When the admin enters a full name
+    And the admin enters a email
+    And the admin enters a valid password
+    And the admin enters the same password in Confirm Password
+    And the admin clicks the Create Trainer button
+    And a success message should be displayed
+
   @invalid
   Scenario Outline: Validate Add Trainer with invalid details of mandatory field
     And clicks on the Trainer side pannel button
