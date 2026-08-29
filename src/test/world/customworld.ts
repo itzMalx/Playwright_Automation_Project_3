@@ -13,6 +13,7 @@ import {SignupPage} from '../page/signupPage'
 import { AddTrainingPage } from "../page/addTrainingPage";
 import { editTrainerProfilePage } from './../page/editTrainerProfilePage';
 import { LearnerExploreTrainingPage } from "../page/learnerExploreTrainingPage";
+import { SortMyCoursesPage } from "../page/SortMyCoursesPage";
 
 export class lmsworld extends World {
 
@@ -37,6 +38,7 @@ export class lmsworld extends World {
     resetEmail!: string;
     emailStartTime!: Date;
     learnerExploreTrainingPage!: LearnerExploreTrainingPage;
+    sortMyCoursesPage!: SortMyCoursesPage;
 }
 
 setWorldConstructor(lmsworld);

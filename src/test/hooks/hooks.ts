@@ -14,6 +14,7 @@ import { LearnerMyCoursePage } from "../page/learnerMyCoursePage";
 import { AddTrainingPage } from "../page/addTrainingPage";
 import { editTrainerProfilePage } from "../page/editTrainerProfilePage";
 import { LearnerExploreTrainingPage } from "../page/learnerExploreTrainingPage";
+import { SortMyCoursesPage } from "../page/SortMyCoursesPage";
 
 setDefaultTimeout(90 * 1000);
 
@@ -23,7 +24,7 @@ let browser: Browser;
 BeforeAll(async () => {
 
     browser = await chromium.launch({
-        headless: true
+        headless: false
     });
 
     logger.info("Browser launched");
@@ -54,6 +55,7 @@ Before(async function (this: lmsworld) {
      this.editTrainerProfilePage =new editTrainerProfilePage(this.page);
 
     this.learnerExploreTrainingPage =new LearnerExploreTrainingPage(this.page);
+    this.sortMyCoursesPage = new SortMyCoursesPage(this.page);
     console.log("ForgotPasswordPage initialized");
     console.log("MailosaurService initialized");
 
