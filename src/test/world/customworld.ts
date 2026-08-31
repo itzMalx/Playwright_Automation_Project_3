@@ -38,6 +38,7 @@ export class lmsworld extends World {
     otp!: string;
     resetEmail!: string;
     emailStartTime!: Date;
+    trainerPassword!: string
     participantName!: string;
     participantEmail!: string;
     learnerExploreTrainingPage!: LearnerExploreTrainingPage;

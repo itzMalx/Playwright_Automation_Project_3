@@ -1,7 +1,32 @@
 import { AdminAddTrainerPage } from './../page/adminAddTrainerPage';
 import { Given, When, Then } from "@cucumber/cucumber";
 import { lmsworld } from "../world/customworld";
-import { expect } from "@playwright/test";
+import { faker } from "@faker-js/faker";
+
+When('the admin enters a full name', async function (this: lmsworld) {
+  const fullName = faker.person.fullName();
+    await this.adminAddTrainerPage.enterFullname(fullName);
+});
+
+When('the admin enters a email', async function (this: lmsworld) {
+  const email = faker.internet.email();
+    await this.adminAddTrainerPage.enteremail(email);
+});
+
+When('the admin enters a valid password', async function (this: lmsworld) {
+  this.trainerPassword = `Trainer@${faker.string.numeric(8)}`;
+    await this.adminAddTrainerPage.enterPassword(this.trainerPassword);
+});
+
+When('the admin enters the same password in Confirm Password', async function (this: lmsworld) {
+  await this.adminAddTrainerPage.enterConfirmPassword(this.trainerPassword);
+});
+
+Then('a success message should be displayed', async function (this: lmsworld) {
+  await this.adminAddTrainerPage.trainerCreated();
+});
+
+/* ========================================================== */
 
 Given('clicks on the Trainer side pannel button', async function (this: lmsworld) {
   await this.adminAddTrainerPage.clickTrainerBtn();
