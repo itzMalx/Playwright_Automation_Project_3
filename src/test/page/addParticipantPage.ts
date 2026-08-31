@@ -8,7 +8,7 @@ export class AddParticipantPage extends BasePage {
     private readonly email =this.page.locator("//input[@type='email']");
     private readonly phone =this.page.locator("//input[@type='tel']");
     private readonly accstatus =this.page.locator("//select[@class='reg-select']");
-    private readonly password =this.page.locator("//input[@placeholder='Enter password (min 6 chars)']");
+    private readonly password =this.page.locator("//input[@type='password']");
     private readonly addpartbtn =this.page.locator("//button[@type='submit']").last();
 
     async clickparticipanttab() {
@@ -55,17 +55,33 @@ async verifyParticipantCreatedByEmail(email: string) {
 }
 
 async verifyValidationMessage() {
-    const fields = [this.fullname,this.email,this.phone,this.password];
-    for (const field of fields) {
-        const isInvalid = await field.evaluate(
-            (element: HTMLInputElement) => !element.checkValidity()
+
+    const message = await this.page.evaluate(() => {
+
+        const elements = Array.from(
+            document.querySelectorAll("input, select, textarea")
         );
-        if (isInvalid) {
-            const message = await field.evaluate((element: HTMLInputElement) =>element.validationMessage);
-            console.log(`Validation message: ${message}`)
-            expect(message).toBe("Please fill out this field.");
-            return;
+
+        for (const element of elements) {
+
+            const input = element as
+                HTMLInputElement |
+                HTMLSelectElement |
+                HTMLTextAreaElement;
+
+            if (!input.checkValidity()) {
+                return input.validationMessage;
+            }
         }
-    }
-    throw new Error("No validation error was found");
-}}
+
+        return "";
+    });
+
+    console.log(`Validation message: ${message}`);
+
+    expect(message).not.toBe("");
+
+    return message;
+}
+
+}

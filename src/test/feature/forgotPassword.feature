@@ -22,7 +22,7 @@ Feature Description: As a user, I want to reset my password using
 
         Examples:
                   | email                            | newPassword | confirmPassword | result  |
-                  | muhindhar@tyalwmo1.mailosaur.net | Admin@123   | Admin@123       | success |
+                  | muhindhar@tyalwmo1.mailosaur.net | Admin@12345 | Admin@12345     | success |
 
         Scenario Outline: Reset password with invalid email
              When user clicks on the forgot password link
