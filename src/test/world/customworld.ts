@@ -13,6 +13,7 @@ import {SignupPage} from '../page/signupPage'
 import { editTrainerProfilePage } from './../page/editTrainerProfilePage';
 import { LearnerExploreTrainingPage } from "../page/learnerExploreTrainingPage";
 import { AddTrainingPage } from "../page/addTrainingPage";
+import { AddParticipantPage } from "../page/addParticipantPage";
 import { AdminAddTrainerPage } from "../page/adminAddTrainerPage";
 import { editSocialLinkTrainerPage } from "../page/editSocialLinkTrainerPage";
 
@@ -34,10 +35,12 @@ export class lmsworld extends World {
     editTrainerProfilePage!: editTrainerProfilePage;
     mailosaurService!: MailosaurService;
     addTrainingPage!:AddTrainingPage
-
+    addParticipantPage!:AddParticipantPage
     otp!: string;
     resetEmail!: string;
     emailStartTime!: Date;
+    participantName!: string;
+    participantEmail!: string;
     learnerExploreTrainingPage!: LearnerExploreTrainingPage;
     adminAddTrainerPage!: AdminAddTrainerPage;
     editSocialLinkTrainerPage!: editSocialLinkTrainerPage;
