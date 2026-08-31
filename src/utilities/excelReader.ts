@@ -12,6 +12,7 @@ export class ExcelReader {
 
         const filePath = path.join(
             process.cwd(),
+            "src",
             "test-data",
             fileName
         );
