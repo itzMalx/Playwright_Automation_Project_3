@@ -60,13 +60,11 @@ export class AdminAddTrainerPage extends BasePage {
     }
 
     async trainerCreated() {
-          await expect(this.creatingTrainerBtn).toBeHidden({ timeout: 30000});
+        await expect(this.creatingTrainerBtn).toBeHidden({ timeout: 30000 });
         await expect(this.trainerCreatedMsg).toHaveText("Trainer created successfully");
         const message = await this.trainerCreatedMsg.textContent();
         logger.info(`Trainer created message: ${message}`);
-          console.log(
-        await this.page.locator("body").innerText()
-    );
+        //console.log(await this.page.locator("body").innerText());
     }
 
     async nameRequiredMsg(errorMsg: string) {
