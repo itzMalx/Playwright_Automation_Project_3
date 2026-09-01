@@ -19,6 +19,8 @@ import { AdminAddTrainerPage } from "../page/adminAddTrainerPage";
 import { editSocialLinkTrainerPage } from "../page/editSocialLinkTrainerPage";
 import { SortMyCoursesPage } from "../page/SortMyCoursesPage";
 
+import { searchParticipantPage } from "../page/searchParticipantPage";
+
 setDefaultTimeout(90 * 1000);
 
 let browser: Browser;
@@ -61,6 +63,9 @@ Before(async function (this: lmsworld) {
     this.adminAddTrainerPage = new AdminAddTrainerPage(this.page);
     this.editSocialLinkTrainerPage=new editSocialLinkTrainerPage(this.page);
     this.sortMyCoursesPage = new SortMyCoursesPage(this.page);
+
+
+    this.searchParticipantPage = new searchParticipantPage(this.page);
 
     console.log("ForgotPasswordPage initialized");
     console.log("MailosaurService initialized");
