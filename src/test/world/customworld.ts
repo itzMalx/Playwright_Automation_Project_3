@@ -17,6 +17,7 @@ import { AddTrainingPage } from "../page/addTrainingPage";
 import { AddParticipantPage } from "../page/addParticipantPage";
 import { AdminAddTrainerPage } from "../page/adminAddTrainerPage";
 import { editSocialLinkTrainerPage } from "../page/editSocialLinkTrainerPage";
+import { ScheduleInterviewPage } from "../page/scheduleInterviewPage";
 
 import { searchParticipantPage } from "../page/searchParticipantPage";
 export class lmsworld extends World {
@@ -49,7 +50,8 @@ export class lmsworld extends World {
     editSocialLinkTrainerPage!: editSocialLinkTrainerPage;
     sortMyCoursesPage!:SortMyCoursesPage
 
-    searchParticipantPage!: searchParticipantPage;
+    scheduleInterviewPage!:ScheduleInterviewPage
+     searchParticipantPage!: searchParticipantPage;
 }
 
 setWorldConstructor(lmsworld);

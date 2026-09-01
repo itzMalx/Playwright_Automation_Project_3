@@ -18,6 +18,7 @@ import { AddParticipantPage } from "../page/addParticipantPage";
 import { AdminAddTrainerPage } from "../page/adminAddTrainerPage";
 import { editSocialLinkTrainerPage } from "../page/editSocialLinkTrainerPage";
 import { SortMyCoursesPage } from "../page/SortMyCoursesPage";
+import { ScheduleInterviewPage } from "../page/scheduleInterviewPage";
 
 import { searchParticipantPage } from "../page/searchParticipantPage";
 
@@ -63,9 +64,11 @@ Before(async function (this: lmsworld) {
     this.adminAddTrainerPage = new AdminAddTrainerPage(this.page);
     this.editSocialLinkTrainerPage=new editSocialLinkTrainerPage(this.page);
     this.sortMyCoursesPage = new SortMyCoursesPage(this.page);
-
-
+    
+    
+    this.scheduleInterviewPage = new ScheduleInterviewPage(this.page)
     this.searchParticipantPage = new searchParticipantPage(this.page);
+
 
     console.log("ForgotPasswordPage initialized");
     console.log("MailosaurService initialized");
