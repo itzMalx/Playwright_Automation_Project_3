@@ -11,8 +11,9 @@ export class CoursePage extends BasePage{
         await this.searchField.fill(keyword)
     }
 
-    async isCourseExists(keyword : string){
-        await expect(this.courseResult).toContainText(keyword)
+    async isCourseExists(keyword: string) {
+        const result=(await this.courseResult.textContent()).toLowerCase();
+        await expect(result).toContain(keyword.trim().toLowerCase());
     }
 
     async noMatchVisible(){
