@@ -3,22 +3,19 @@ import * as path from "path";
 
 export class ExcelReader {
 
+    // Get one row using TestCase
     static getRow(
         fileName: string,
         sheetName: string,
         testCase: string
-    ) {
+    ): Record<string, string> {
 
-        const filePath = path.resolve(
-            __dirname,
-            "../test-data",
+        const filePath = path.join(
+            process.cwd(),
+            "src",
+            "test-data",
             fileName
         );
-import * as XLSX from 'xlsx';
-
-export class ExcelReader {
-
-    static getData(filePath: string, sheetName: string): Record<string, string>[] {
 
         const workbook = XLSX.readFile(filePath);
 
@@ -30,10 +27,13 @@ export class ExcelReader {
             );
         }
 
-        const data = XLSX.utils.sheet_to_json<any>(worksheet);
+        const data =
+            XLSX.utils.sheet_to_json<Record<string, string>>(worksheet, {
+                defval: ""
+            });
 
         const row = data.find(
-            (item) => String(item.TestCase).trim() === testCase.trim()
+            (item) => item.TestCase === testCase
         );
 
         if (!row) {
@@ -43,12 +43,29 @@ export class ExcelReader {
         }
 
         return row;
-            throw new Error(`Sheet "${sheetName}" not found in Excel file`);
+    }
+
+
+    // Get all rows from Excel
+    static getData(
+        filePath: string,
+        sheetName: string
+    ): Record<string, string>[] {
+
+        const workbook = XLSX.readFile(filePath);
+
+        const worksheet = workbook.Sheets[sheetName];
+
+        if (!worksheet) {
+            throw new Error(
+                `Sheet "${sheetName}" not found in ${filePath}`
+            );
         }
 
-        const data = XLSX.utils.sheet_to_json<Record<string, string>>(worksheet, {
-            defval: ''
-        });
+        const data =
+            XLSX.utils.sheet_to_json<Record<string, string>>(worksheet, {
+                defval: ""
+            });
 
         return data;
     }
