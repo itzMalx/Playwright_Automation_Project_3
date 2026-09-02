@@ -17,6 +17,7 @@ import { AddTrainingPage } from "../page/addTrainingPage";
 import { AddParticipantPage } from "../page/addParticipantPage";
 import { AdminAddTrainerPage } from "../page/adminAddTrainerPage";
 import { editSocialLinkTrainerPage } from "../page/editSocialLinkTrainerPage";
+import { AdminSearchTrainerPage } from "../page/adminSearchTrainerPage";
 
 export class lmsworld extends World {
 
@@ -47,6 +48,7 @@ export class lmsworld extends World {
     adminAddTrainerPage!: AdminAddTrainerPage;
     editSocialLinkTrainerPage!: editSocialLinkTrainerPage;
     sortMyCoursesPage!:SortMyCoursesPage
+    adminSearchTrainerPage!: AdminSearchTrainerPage
 }
 
 setWorldConstructor(lmsworld);
