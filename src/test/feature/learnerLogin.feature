@@ -7,6 +7,7 @@ Feature Description: As a learner user, I want to login to the wave init site wi
     Background:
         Given learner is on the login page of the waveinit lms site
 
+    @login
     Scenario Outline: Login to the waveinit lms site as a learner with credentials
         And learner clicks on the learner role
         And learner enters the email "<email>"

@@ -14,6 +14,7 @@ import { AddTrainingPage } from "../page/addTrainingPage";
 import { editTrainerProfilePage } from './../page/editTrainerProfilePage';
 import { LearnerExploreTrainingPage } from "../page/learnerExploreTrainingPage";
 import { AdminAddTrainerPage } from "../page/adminAddTrainerPage";
+import { ProfilePage } from "../page/profilePage";
 
 export class lmsworld extends World {
 
@@ -21,6 +22,7 @@ export class lmsworld extends World {
     context!: BrowserContext;
     page!: Page;
 
+    profilePage!:ProfilePage;
     adminLoginPage!: adminLoginPage;
     learnerLoginPage!: learnerLoginPage;
     trainerLoginPage!: trainerLoginPage;

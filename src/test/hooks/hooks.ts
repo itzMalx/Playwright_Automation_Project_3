@@ -15,6 +15,7 @@ import { AddTrainingPage } from "../page/addTrainingPage";
 import { editTrainerProfilePage } from "../page/editTrainerProfilePage";
 import { LearnerExploreTrainingPage } from "../page/learnerExploreTrainingPage";
 import { AdminAddTrainerPage } from "../page/adminAddTrainerPage";
+import { ProfilePage } from "../page/profilePage";
 
 setDefaultTimeout(90 * 1000);
 
@@ -49,6 +50,7 @@ Before(async function (this: lmsworld) {
     this.addTrainingPage = new AddTrainingPage(this.page)
    
 
+    this.profilePage=new ProfilePage(this.page);
     this.forgotPasswordPage = new ForgotPasswordPage(this.page);
     this.mailosaurService = new MailosaurService();
     this.learnerMyCoursePage = new LearnerMyCoursePage(this.page);
