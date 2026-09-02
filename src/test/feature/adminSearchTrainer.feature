@@ -1,5 +1,5 @@
 @Myl @searchTrainer
-Feature: Search Trainer
+Feature: Myl_2.8.26_Search Trainer
 
     Background:
         Given user is on the login page of the waveinit lms site
