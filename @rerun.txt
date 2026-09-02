@@ -1,1 +1,5 @@
+<<<<<<< HEAD
+src\test\feature\searchParticipants.feature:17:21
+=======
 src\test\feature\adminInterview.feature:18:19:20
+>>>>>>> 33979ce0073833122270fa1416469440623380a0
