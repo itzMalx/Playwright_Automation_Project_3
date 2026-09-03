@@ -34,6 +34,15 @@ Feature Description: As a learner user, I want to login to the wave init site wi
             | Portfolio | wix\.com/website/templates/html/portfolio-cv/portfolios       |
             | LinkedIn  | linkedin\.com                                                 |
 
+    @HalfBaked
+    Scenario Outline: Application should display the social media link in the profile section after the learner saves the links
+        Then the application should display the "<link>" in the profile section
 
-
+    Examples:
+        | link                                                                    |
+        | https://x.com/                                                           |
+        | https://github.com/                                                      |
+        | https://www.wix.com/website/templates/html/portfolio-cv/portfolios       |
+        | https://www.linkedin.com/                                                |
+        | https://www.instagram.com/ |
 

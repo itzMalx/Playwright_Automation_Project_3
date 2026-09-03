@@ -37,3 +37,11 @@ Then('the learner should be navigated to the {string} site',async function (this
         await expect(newPage).toHaveURL(new RegExp(expectedUrl));
     }
 );
+
+Then(
+    'the application should display the {string} in the profile section',
+    async function (expectedUrl: string) {
+
+        await this.profilePage.verifySocialMediaLink(expectedUrl);
+    }
+);
