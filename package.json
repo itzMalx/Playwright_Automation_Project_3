@@ -4,19 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "pretest": "if exist reports rmdir /s /q reports",
-    "test": "cucumber-js",
-    
-    "muhindhar": "cucumber-js --tags @Muhindhar --format progress --format json:reports/cucumber-report.json --format allure-cucumberjs/reporter",
-    "malavicka": "cucumber-js --tags @Malavicka --format json:reports/cucumber-report.json --format allure-cucumberjs/reporter",
-    "vetri": "cucumber-js --tags @Vetri --format json:reports/cucumber-report.json --format allure-cucumberjs/reporter",
-    "mylambigai": "cucumber-js --tags @Myl --format json:reports/cucumber-report.json --format allure-cucumberjs/reporter",
-    "shobana": "cucumber-js --tags @Shobana --format json:reports/cucumber-report.json --format allure-cucumberjs/reporter",
-    "rerun": "cucumber-js @rerun.txt --format json:reports/cucumber-report.json --format allure-cucumberjs/reporter",
-    "report": "tsx src/utilities/report.ts",
-    "allure:generate": "allure generate allure-results --clean -o allure-report",
-    "allure:open": "allure open allure-report"
-  },
+  "pretest": "if exist reports rmdir /s /q reports",
+  "test": "cucumber-js --format progress --format json:reports/cucumber-report.json --format allure-cucumberjs/reporter",
+
+  "muhindhar": "cucumber-js --tags @Muhindhar --format progress --format json:reports/cucumber-report.json --format allure-cucumberjs/reporter",
+  "malavicka": "cucumber-js --tags @Malavicka --format json:reports/cucumber-report.json --format allure-cucumberjs/reporter",
+  "vetri": "cucumber-js --tags @Vetri --format json:reports/cucumber-report.json --format allure-cucumberjs/reporter",
+  "mylambigai": "cucumber-js --tags @Myl --format json:reports/cucumber-report.json --format allure-cucumberjs/reporter",
+  "shobana": "cucumber-js --tags @Shobana --format json:reports/cucumber-report.json --format allure-cucumberjs/reporter",
+
+  "rerun": "cucumber-js @rerun.txt --format progress --format json:reports/cucumber-report.json --format allure-cucumberjs/reporter",
+
+  "report": "tsx src/utilities/report.ts",
+  "allure:generate": "allure generate allure-results --clean -o allure-report",
+  "allure:open": "allure open allure-report"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
