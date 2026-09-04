@@ -18,6 +18,7 @@ import { AddParticipantPage } from "../page/addParticipantPage";
 import { AdminAddTrainerPage } from "../page/adminAddTrainerPage";
 import { ProfilePage } from "../page/profilePage";
 import { editSocialLinkTrainerPage } from "../page/editSocialLinkTrainerPage";
+import { AdminSearchTrainerPage } from "../page/adminSearchTrainerPage";
 import { ScheduleInterviewPage } from "../page/scheduleInterviewPage";
 
 import { searchParticipantPage } from "../page/searchParticipantPage";
@@ -52,6 +53,7 @@ export class lmsworld extends World {
     adminAddTrainerPage!: AdminAddTrainerPage;
     editSocialLinkTrainerPage!: editSocialLinkTrainerPage;
     sortMyCoursesPage!:SortMyCoursesPage
+    adminSearchTrainerPage!: AdminSearchTrainerPage
 
     scheduleInterviewPage!:ScheduleInterviewPage
      searchParticipantPage!: searchParticipantPage;

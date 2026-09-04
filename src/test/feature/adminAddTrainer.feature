@@ -7,22 +7,20 @@ Feature: Myl 27_08_2026 Add Trainer
     And user enters the email "admin@test.com"
     And user enters the password "admin123"
     And user clicks on the signin button
+    And clicks on the Trainer side pannel button
+    And clicks on the Add trainer button
 
   @valid
   Scenario: Successfully add trainer with mandatory fields
-  And clicks on the Trainer side pannel button
-    And clicks on the Add trainer button
     When the admin enters a full name
     And the admin enters a email
     And the admin enters a valid password
     And the admin enters the same password in Confirm Password
     And the admin clicks the Create Trainer button
-    And a success message should be displayed
+    Then a success message should be displayed
 
   @invalid
   Scenario Outline: Validate Add Trainer with invalid details of mandatory field
-    And clicks on the Trainer side pannel button
-    And clicks on the Add trainer button
     When the admin enters "<FullName>" in the Full Name field
     And the admin enters "<Email>" in the Email Address field
     And the admin enters "<Password>" in the Password field
@@ -36,3 +34,18 @@ Feature: Myl 27_08_2026 Add Trainer
       | Mugan    |                  | short    | short           | email           | Enter a valid email address |
       | Mugan    | muga@example.com |          | ucandoit        | password        | Password is required        |
       | Mugan    | muga@example.com | ucandoit |                 | confirmpassword | Please confirm the password |
+
+  @valid
+  Scenario: Successfully create trainer by filling all the fields
+    When the admin enters a full name
+    And the admin enters a email
+    And the admin enters a mobile number
+    And the admin selects a department
+    And the admin selects a designation
+    And the admin selects an experience
+    And the admin enters a valid password
+    And the admin enters the same password in Confirm Password
+    And the admin verifies the auto-generated Employee ID
+    And the admin keeps the Account Status as Active
+    And the admin clicks the Create Trainer button
+    Then a success message should be displayed

@@ -19,6 +19,7 @@ import { AdminAddTrainerPage } from "../page/adminAddTrainerPage";
 import { ProfilePage } from "../page/profilePage";
 import { editSocialLinkTrainerPage } from "../page/editSocialLinkTrainerPage";
 import { SortMyCoursesPage } from "../page/SortMyCoursesPage";
+import { AdminSearchTrainerPage } from "../page/adminSearchTrainerPage";
 import { ScheduleInterviewPage } from "../page/scheduleInterviewPage";
 import { AdminModuleNavigationPage } from "../page/adminModuleNavigationPage";
 import { searchParticipantPage } from "../page/searchParticipantPage";
@@ -30,7 +31,7 @@ let browser: Browser;
 
 BeforeAll(async () => {
 
-    browser = await chromium.launch({headless: false});
+    browser = await chromium.launch({headless: true});
     logger.info("Browser launched");
 });
 
@@ -66,6 +67,7 @@ Before(async function (this: lmsworld) {
     this.adminAddTrainerPage = new AdminAddTrainerPage(this.page);
     this.editSocialLinkTrainerPage=new editSocialLinkTrainerPage(this.page);
     this.sortMyCoursesPage = new SortMyCoursesPage(this.page);
+    this.adminSearchTrainerPage = new AdminSearchTrainerPage(this.page);
     this.adminModuleNavigationPage = new AdminModuleNavigationPage(this.page);
     
     this.scheduleInterviewPage = new ScheduleInterviewPage(this.page)

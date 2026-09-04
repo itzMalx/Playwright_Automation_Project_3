@@ -76,10 +76,12 @@ module.exports = {
     dryRun: false,
 
     format: [
+      "summary",
       "json:reports/cucumber-report.json",
       "rerun:@rerun.txt",
       "allure-cucumberjs/reporter",
       "progress"
+      
     ],
   },
 
