@@ -16,6 +16,7 @@ import { editTrainerProfilePage } from "../page/editTrainerProfilePage";
 import { LearnerExploreTrainingPage } from "../page/learnerExploreTrainingPage";
 import { AddParticipantPage } from "../page/addParticipantPage";
 import { AdminAddTrainerPage } from "../page/adminAddTrainerPage";
+import { ProfilePage } from "../page/profilePage";
 import { editSocialLinkTrainerPage } from "../page/editSocialLinkTrainerPage";
 import { SortMyCoursesPage } from "../page/SortMyCoursesPage";
 import { ScheduleInterviewPage } from "../page/scheduleInterviewPage";
@@ -50,6 +51,7 @@ Before(async function (this: lmsworld) {
     this.dashboardPage = new DashboardPage(this.page);
     this.coursePage = new CoursePage(this.page);
     this.addTrainingPage = new AddTrainingPage(this.page)
+    this.profilePage=new ProfilePage(this.page);
     this.addParticipantPage = new AddParticipantPage(this.page)
     this.forgotPasswordPage = new ForgotPasswordPage(this.page);
     this.mailosaurService = new MailosaurService();
