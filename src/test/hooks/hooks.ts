@@ -19,7 +19,7 @@ import { AdminAddTrainerPage } from "../page/adminAddTrainerPage";
 import { editSocialLinkTrainerPage } from "../page/editSocialLinkTrainerPage";
 import { SortMyCoursesPage } from "../page/SortMyCoursesPage";
 import { ScheduleInterviewPage } from "../page/scheduleInterviewPage";
-
+import { AdminModuleNavigationPage } from "../page/adminModuleNavigationPage";
 import { searchParticipantPage } from "../page/searchParticipantPage";
 
 setDefaultTimeout(90 * 1000);
@@ -64,7 +64,7 @@ Before(async function (this: lmsworld) {
     this.adminAddTrainerPage = new AdminAddTrainerPage(this.page);
     this.editSocialLinkTrainerPage=new editSocialLinkTrainerPage(this.page);
     this.sortMyCoursesPage = new SortMyCoursesPage(this.page);
-    
+    this.adminModuleNavigationPage = new AdminModuleNavigationPage(this.page);
     
     this.scheduleInterviewPage = new ScheduleInterviewPage(this.page)
     this.searchParticipantPage = new searchParticipantPage(this.page);
