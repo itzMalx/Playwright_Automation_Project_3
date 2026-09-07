@@ -24,3 +24,5 @@ screenshots/
 downloads/
 allure-report/
 allure-results/
+# Continue local agent configurations
+.continue/agents/

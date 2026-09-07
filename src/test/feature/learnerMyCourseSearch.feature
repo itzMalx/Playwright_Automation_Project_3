@@ -1,11 +1,11 @@
-@searchMyCourses
+@Myl @searchMyCourses
 Feature: Myl_25.08.2026_Search courses in My Courses
 
     Background:
         Given user is on the login page of the WaveInit LMS site
         And learner clicks on the learner role
-        And learner enters the email "mugan@gmail.com"
-        And learner enters the password "Mugan@16"
+        And learner enters the email "titooram123@gmail.com"
+        And learner enters the password "sriram123@"
         And learner clicks on the signin button
         And learner clicks on my course button
 
@@ -16,9 +16,9 @@ Feature: Myl_25.08.2026_Search courses in My Courses
 
         Examples:
             | searchText | expectedCourse |
-            | SDET-1     | SDET-1         |
-            | SDET       | SDET-1         |
-            | SdeT       | SDET-1         |
+            | Python     | Python         |
+            | PYTHON     | Python         |
+            | PYThon     | Python         |
 
     @invalid
     Scenario Outline: Search course using non-existing course title

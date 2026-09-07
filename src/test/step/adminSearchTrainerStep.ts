@@ -6,6 +6,6 @@ When('the admin enters {string} in the trainer search field', async function (th
    await this.adminSearchTrainerPage.searchTrainer(searchText);
 });
 
-Then('the trainer should be displayed the searched {string}', async function (this: lmsworld, trainerName: string) {
-      await this.adminSearchTrainerPage.verifyTrainerContainsSearchText(trainerName);
+Then('the searched {string} dispalyed under {string}', async function (this: lmsworld, data: string, parameter: string) {
+  await this.adminSearchTrainerPage.verifyTrainerSearchResult(data,parameter);
 });
