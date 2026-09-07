@@ -11,11 +11,13 @@ Feature: Myl_2.8.26_Search Trainer
 
 
     @valid
-    Scenario Outline: Search trainer using exact and partial trainer name
-        When the admin enters "<trainerName>" in the trainer search field
-        Then the trainer should be displayed the searched "<trainerName>"
+    Scenario Outline: Search trainer using different parameters
+        When the admin enters "<data>" in the trainer search field
+        Then the searched "<data>" dispalyed under "<parameter>"
 
         Examples:
-            | trainerName |
-            | Mugan       |
-            | John        |
+            | data           | parameter |
+            | Mugan M        | Trainer   |
+            | suba@gmail.com | Email     |
+            | 7867090837     | Phone     |
+            | EMP-1050       | EmpId     |
