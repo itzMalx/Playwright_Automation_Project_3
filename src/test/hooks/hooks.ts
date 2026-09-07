@@ -16,9 +16,13 @@ import { editTrainerProfilePage } from "../page/editTrainerProfilePage";
 import { LearnerExploreTrainingPage } from "../page/learnerExploreTrainingPage";
 import { AddParticipantPage } from "../page/addParticipantPage";
 import { AdminAddTrainerPage } from "../page/adminAddTrainerPage";
+import { ProfilePage } from "../page/profilePage";
 import { editSocialLinkTrainerPage } from "../page/editSocialLinkTrainerPage";
 import { SortMyCoursesPage } from "../page/SortMyCoursesPage";
 import { AdminSearchTrainerPage } from "../page/adminSearchTrainerPage";
+import { ScheduleInterviewPage } from "../page/scheduleInterviewPage";
+import { AdminModuleNavigationPage } from "../page/adminModuleNavigationPage";
+import { searchParticipantPage } from "../page/searchParticipantPage";
 
 setDefaultTimeout(90 * 1000);
 
@@ -48,6 +52,7 @@ Before(async function (this: lmsworld) {
     this.dashboardPage = new DashboardPage(this.page);
     this.coursePage = new CoursePage(this.page);
     this.addTrainingPage = new AddTrainingPage(this.page)
+    this.profilePage=new ProfilePage(this.page);
     this.addParticipantPage = new AddParticipantPage(this.page)
     this.forgotPasswordPage = new ForgotPasswordPage(this.page);
     this.mailosaurService = new MailosaurService();
@@ -63,6 +68,11 @@ Before(async function (this: lmsworld) {
     this.editSocialLinkTrainerPage=new editSocialLinkTrainerPage(this.page);
     this.sortMyCoursesPage = new SortMyCoursesPage(this.page);
     this.adminSearchTrainerPage = new AdminSearchTrainerPage(this.page);
+    this.adminModuleNavigationPage = new AdminModuleNavigationPage(this.page);
+    
+    this.scheduleInterviewPage = new ScheduleInterviewPage(this.page)
+    this.searchParticipantPage = new searchParticipantPage(this.page);
+
 
     console.log("ForgotPasswordPage initialized");
     console.log("MailosaurService initialized");
