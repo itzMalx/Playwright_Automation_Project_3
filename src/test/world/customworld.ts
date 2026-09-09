@@ -23,6 +23,8 @@ import { ScheduleInterviewPage } from "../page/scheduleInterviewPage";
 
 import { searchParticipantPage } from "../page/searchParticipantPage";
 import { AdminModuleNavigationPage } from "../page/adminModuleNavigationPage";
+import { LmsLoginPage } from "../page/LmsLoginPage";
+
 export class lmsworld extends World {
 
     browser!: Browser;
@@ -56,7 +58,8 @@ export class lmsworld extends World {
     adminSearchTrainerPage!: AdminSearchTrainerPage
 
     scheduleInterviewPage!:ScheduleInterviewPage
-     searchParticipantPage!: searchParticipantPage;
+    searchParticipantPage!: searchParticipantPage;
+    lmsLoginPage!: LmsLoginPage;
 }
 
 setWorldConstructor(lmsworld);
