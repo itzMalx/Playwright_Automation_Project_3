@@ -7,8 +7,9 @@ Given('user is on the login page of the waveinit lms site',async function (this:
         await this.adminLoginPage.goto();
     }
 );
-Given('user clicks on the admin role', async function () {
+Given('user clicks on the admin role', async function (this: lmsworld) {
   // Write code here that turns the phrase above into concrete actions
+  await this.adminLoginPage.handlePrivacyPopup();
   await this.adminLoginPage.clickadmin();
 });
 

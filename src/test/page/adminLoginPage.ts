@@ -2,12 +2,13 @@ import { BasePage } from "./basepage";
 
 export class adminLoginPage extends BasePage {
 
-    private readonly admintab =this.page.locator("//div[@class='auth-role-selector']/child::button[1]");
-    private readonly email =this.page.locator("//input[@id='login-email']");
-    private readonly password =this.page.locator("//input[@id='login-password']");
-    private readonly signinbtn =this.page.locator("//button[@type='submit']");
-    private readonly success =this.page.locator("//h1[@class='adb-welcome-title']");
-    private readonly wrongemailorpass =this.page.getByText("Invalid email or password");
+    private readonly admintab = this.page.locator("//div[@class='auth-role-selector']/child::button[1]");
+    private readonly email = this.page.locator("//input[@id='login-email']");
+    private readonly password = this.page.locator("//input[@id='login-password']");
+    private readonly signinbtn = this.page.locator("//button[@type='submit']");
+    private readonly success = this.page.locator("//h1[@class='adb-welcome-title']");
+    private readonly wrongemailorpass = this.page.getByText("Invalid email or password");
+    private readonly essentialOnly = this.page.getByRole('button', { name: 'Essential Only' });
 
     async clickadmin() {
         await this.click(this.admintab);
@@ -42,7 +43,7 @@ export class adminLoginPage extends BasePage {
             (element: HTMLInputElement) => element.validationMessage
         );
     }
-    
+
     async getPasswordValidationMessage() {
         return await this.password.evaluate(
             (element: HTMLInputElement) => element.validationMessage
@@ -66,4 +67,21 @@ export class adminLoginPage extends BasePage {
         await this.enterPassword(password);
         await this.clickSignin();
     }
+
+  async handlePrivacyPopup() {
+
+    const privacyDialog = this.page.getByRole('dialog', {
+        name: 'Cookie and Privacy Consent Preferences'
+    });
+
+    if (await privacyDialog.isVisible()) {
+ 
+        await privacyDialog.getByRole('button', {
+            name: 'Essential Only'
+        }).click();
+
+        await privacyDialog.waitFor({ state: 'hidden' });
+    }
+}
+
 }
