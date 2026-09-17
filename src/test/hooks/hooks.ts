@@ -23,6 +23,7 @@ import { AdminSearchTrainerPage } from "../page/adminSearchTrainerPage";
 import { ScheduleInterviewPage } from "../page/scheduleInterviewPage";
 import { AdminModuleNavigationPage } from "../page/adminModuleNavigationPage";
 import { searchParticipantPage } from "../page/searchParticipantPage";
+import { LmsLoginPage } from "../page/LmsLoginPage";
 
 setDefaultTimeout(90 * 1000);
 
@@ -41,6 +42,7 @@ Before(async function (this: lmsworld) {
     this.browser = browser;
     this.context = await this.browser.newContext();
     this.page = await this.context.newPage();
+    this.lmsLoginPage = new LmsLoginPage(this.page);
     this.adminLoginPage = new adminLoginPage(this.page)
     this.learnerLoginPage = new learnerLoginPage(this.page);
     this.trainerLoginPage = new trainerLoginPage(this.page)
